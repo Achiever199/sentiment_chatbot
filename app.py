@@ -3,6 +3,12 @@ app.py — Sentiment-Aware Customer Support Chatbot
 Run: streamlit run app.py
 """
 
+import nltk
+import subprocess
+subprocess.run(["python", "-m", "textblob.download_corpora"], capture_output=True)
+nltk.download('punkt', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
+
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
